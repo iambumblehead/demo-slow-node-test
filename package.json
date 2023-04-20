@@ -1,0 +1,24 @@
+{
+  "name": "demo-slow-node-test",
+  "version": "0.0.1",
+  "description": "demonstrates slow node:test",
+  "license": "UNLICENSED",
+  "type": "module",
+  "details": {
+    "tests": 30
+  },
+  "scripts": {
+    "test-node-describe": "time node --loader=esmock --test-reporter=spec --test ./test-node-describe/",
+    "test-node-test": "time node --loader=esmock --test-reporter=spec --test ./test-node-test/",
+    "test-ava": "time ava --node-arguments=\"--loader=esmock\" ./test-ava/"
+  },
+  "dependencies": {
+    "esmock": "2.2.0",
+    "@apollo/server": "4.6.0",
+    "ava": "^5.2.0"
+  },
+  "ava": {
+    "failWithoutAssertions": false,
+    "timeout": "5m"
+  }
+}
